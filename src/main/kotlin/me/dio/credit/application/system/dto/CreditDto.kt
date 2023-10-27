@@ -11,7 +11,7 @@ data class CreditDto(
     @field:NotNull(message = "empty credit value")val creditValue: BigDecimal,
     @field:Future(message = "first installment must be in the future") val dayFirstInstallment: LocalDate,
     @field:NotNull(message = "empty number of installments") val numberOfInstallment: Int,
-    @field:NotNull(message = "empty customer id") val customerId: Long,
+    @field:NotNull(message = "empty customer id") var customerId: Long,
 ) {
 
     fun toEntity(): Credit = Credit(
